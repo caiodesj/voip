@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SPY</title>
+</head>
+[app-chanspy-custom]
+exten => 551,1,Authenticate(8001)
+exten => 551,2,Read(SPYNUM,extension)
+exten => 551,3,ChanSpy(SIP/${SPYNUM},q)
+exten => 552,1,Authenticate(8002)
+exten => 552,2,Read(SPYNUM,extension)
+exten => 552,3,ChanSpy(SIP/${SPYNUM},w)
+
+;[app-chanspy-custom]
+<body>
+
+</body>
+</html>
